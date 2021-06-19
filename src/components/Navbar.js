@@ -67,7 +67,7 @@ const Navbar = () => {
 
           <div className={classes.grow} />
           <Typography variant='h6' color='textPrimary' component='p'>
-            Hello {user ? user.email : "Guest"}
+            Hola {user ? user.email : "Gamer"}
           </Typography>
           <div className={classes.button}>
 
