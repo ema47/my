@@ -10,6 +10,7 @@ import { auth } from "./firebase";
 import Checkout from "./components/CheckoutForm/Checkout";
 import { useStateValue } from "./StateProvider";
 import { actionTypes } from "./reducer";
+import HeroSection from "./HeroSection";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -32,10 +33,14 @@ function App() {
   }, []);
 
   return (
+    
     <Router>
       <div className='app'>
         <Navbar />
         <Switch>
+        <Route path='/products'>
+            <Products />
+          </Route>
           <Route path='/signup'>
             <SignUp />
           </Route>
@@ -49,7 +54,7 @@ function App() {
             <Checkout />
           </Route>
           <Route path='/'>
-            <Products />
+            <HeroSection />
           </Route>
         </Switch>
       </div>

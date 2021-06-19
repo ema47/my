@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "7rem",
   },
   appBar: {
-    backgroundColor: "whitesmoke",
+    backgroundColor: "white",
     boxShadow: "none",
   },
   grow: {
@@ -26,9 +26,11 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginLeft: theme.spacing(2),
+
   },
   image: {
     marginRight: "10px",
+    height:"3rem",
   },
 }));
 
@@ -68,12 +70,18 @@ const Navbar = () => {
             Hello {user ? user.email : "Guest"}
           </Typography>
           <div className={classes.button}>
+
+          <Link to='products'>
+              <Button  >
+                <strong>Productos</strong>
+              </Button>
+            </Link>
+
             <Link to={!user && "/signin"}>
               <Button onClick={handleAuth} variant='outlined'>
                 <strong>{user ? "Sign Out" : "Sign In"}</strong>
               </Button>
             </Link>
-
             <Link to='/checkout-page'>
               <IconButton aria-label='show cart items' color='inherit'>
                 <Badge badgeContent={basket?.length} color='secondary'>
@@ -81,6 +89,7 @@ const Navbar = () => {
                 </Badge>
               </IconButton>
             </Link>
+           
           </div>
         </Toolbar>
       </AppBar>

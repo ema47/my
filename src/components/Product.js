@@ -72,7 +72,7 @@ export default function Product({
             variant='h5'
             color='textSecondary'
           >
-            {accounting.formatMoney(price, "€")}
+            {accounting.formatMoney(price,"S/.")}
           </Typography>
         }
         title={name}
