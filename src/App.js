@@ -11,6 +11,7 @@ import Checkout from "./components/CheckoutForm/Checkout";
 import { useStateValue } from "./StateProvider";
 import { actionTypes } from "./reducer";
 import HeroSection from "./HeroSection";
+import Home from "./Home";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -54,7 +55,7 @@ function App() {
             <Checkout />
           </Route>
           <Route path='/'>
-            <HeroSection />
+            <Home />
           </Route>
         </Switch>
       </div>

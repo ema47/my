@@ -15,10 +15,10 @@ import { actionTypes } from "../reducer";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom: "7rem",
+    marginBottom: "4rem",
   },
   appBar: {
-    backgroundColor: "white",
+    backgroundColor: "#212121",
     boxShadow: "none",
   },
   grow: {
@@ -31,6 +31,13 @@ const useStyles = makeStyles((theme) => ({
   image: {
     marginRight: "10px",
     height:"3rem",
+  },
+
+  margin: {
+    margin: theme.spacing(1),
+    color:"#eeeeee",
+    marginRight: "18px",
+
   },
 }));
 
@@ -54,7 +61,7 @@ const Navbar = () => {
     <div className={classes.root}>
       <AppBar position='fixed' className={classes.appBar}>
         <Toolbar>
-          <Link to='/'>
+          <Link to='/' >
             <IconButton>
               <img
                 src={logo}
@@ -66,30 +73,29 @@ const Navbar = () => {
           </Link>
 
           <div className={classes.grow} />
-          <Typography variant='h6' color='textPrimary' component='p'>
+          <Typography variant='h6' color='#e3f2fd' component='p'>
             Hola {user ? user.email : "Gamer"}
           </Typography>
           <div className={classes.button}>
 
-          <Link to='products'>
-              <Button  >
-                <strong>Productos</strong>
+          <Link to='products' >
+              <Button className={classes.margin}>
+               Productos
               </Button>
             </Link>
 
             <Link to={!user && "/signin"}>
-              <Button onClick={handleAuth} variant='outlined'>
+              <Button onClick={handleAuth} variant='contained' >
                 <strong>{user ? "Sign Out" : "Sign In"}</strong>
               </Button>
             </Link>
             <Link to='/checkout-page'>
-              <IconButton aria-label='show cart items' color='inherit'>
+              <IconButton aria-label='show cart items' color='primary'>
                 <Badge badgeContent={basket?.length} color='secondary'>
-                  <ShoppingCart fontSize='large' color='primary' />
+                  <ShoppingCart fontSize='large' color='white' />
                 </Badge>
               </IconButton>
             </Link>
-           
           </div>
         </Toolbar>
       </AppBar>
