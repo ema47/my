@@ -3,7 +3,8 @@ import axios from "axios"
 let products=[]
 
 //const URL =`${process.env.REACT_APP_URL_API}/Productos`
-const URL ="https://609f10645f32be00171cd350.mockapi.io/product"
+//const URL ="https://609f10645f32be00171cd350.mockapi.io/product"
+const URL = "http://192.168.1.10:8000/product"
 
 const obtenerProductos = async () =>{
     try {
